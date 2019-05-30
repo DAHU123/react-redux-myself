@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Dropdown, Menu, Icon } from 'antd'
+import { Dropdown, Menu, Icon, message } from 'antd'
+import AutoSuggest from 'lili-react-tiny-autosuggest'
 const menu = (
     <Menu>
         <Menu.Item>
@@ -52,12 +53,15 @@ export default class MyPractice extends Component {
             console.log(value); // 42
         });
     }
-
+    selectDrop = (option) => {
+        message.info('你选择了||你填写了:'+option)
+    }
     render() {
+        let arr = [ 'JS', 'JavaScript', 'JayShow', 'Jolin' ]
         return this.props.isFetching ? (<h1>Loading…</h1>) : (
             <ul className="goods">
                 <div>this is my Practice</div>
-
+                <AutoSuggest placeholder='请输入内容' suggestions={arr} onSelect={this.selectDrop}></AutoSuggest>
                 <Dropdown overlay={menu}>
                     <sapn className="ant-dropdown-link">
                         Hover me <Icon type="down" />
