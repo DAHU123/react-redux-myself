@@ -50,7 +50,7 @@ export default class MyPractice extends Component {
         };
         let p1 = Promise.resolve(thenable);
         p1.then(function(value) {
-            console.log(value); // 42
+            // console.log(value); // 42
         });
     }
     selectDrop = (option) => {
@@ -71,3 +71,37 @@ export default class MyPractice extends Component {
         );
     }
 }
+
+class Point{
+    constructor(x, y){
+        //Point这个类上拥有的一些属性
+        this.x = x;
+        this.y = y;
+    }
+    //在Point这个类的原型上添加方法
+    sayWrods(){
+        return this.x + '**' + this.y
+    }
+}
+
+class Two extends Point{
+    constructor(){
+        super()
+        this.x=8
+    }
+}
+
+let a = new Point(3,4)
+/*
+*
+* a是由Point这个类实例化出来的对象,
+* 是Point的对象实例,当执行new命令创建a时,会自动调用Point的constructor方法,
+* 一个类必须有constructor方法,如果没有显式定义,一个默认的constructor方法会被默认添加,
+* 所以即使一个类,你没有添加constructor这个构造函数,也是会有一个默认的构造函数的.
+* 一般的constructor方法返回实例对象this,但是也可以指定constructor方法返回一个全新的对象,让返回的实例对象不是该类的实例.
+*
+*
+* */
+let b = new Two()
+console.log(a);
+console.log(b);
