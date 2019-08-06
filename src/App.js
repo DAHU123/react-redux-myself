@@ -3,7 +3,6 @@ import Nav from './component/nav';
 import Welcome from './page/welcome';
 import Goods from './page/goods';
 import MyPractice from './page/MyPractice';
-import PracticeMob from './page/PracticeMob';
 import './App.css';
 import 'antd/dist/antd.css'
 import {Route} from 'react-router-dom';
@@ -17,9 +16,6 @@ const LIST = [{
 }, {
     text: 'myPractice',
     url: '/myPractice'
-}, {
-    text: 'PracticeMob',
-    url: '/PracticeMob'
 }];
 
 class App extends Component {
@@ -33,7 +29,6 @@ class App extends Component {
                     <Route path='/welcome' component={Welcome} />
                     <Route path='/goods' component={Goods} />
                     <Route path='/myPractice' component={MyPractice} />
-                    <Route path='/PracticeMob' component={PracticeMob} />
                 </div>
             </div>
         );

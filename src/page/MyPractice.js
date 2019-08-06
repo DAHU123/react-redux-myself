@@ -109,7 +109,7 @@ let a = new Point(3,4)
 * */
 let b = new Two()
 // console.log(a);
-console.log(b);
+// console.log(b);
 
 class D{
     constructor(age,email){
